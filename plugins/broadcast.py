@@ -58,7 +58,7 @@ async def broadcast_handler(bot: Client, m: Message):
         else:
            failed += 1
         if sts == 400:
-           #await db.delete_user(user['_id'])
+           await db.delete_user(user['_id'])
         done += 1
         if not done % 20:
            await sts_msg.edit(f"Broadcast in progress:\nnTotal Users {total_users}\nCompleted: {done} / {total_users}\nSuccess: {success}\nFailed: {failed}")
